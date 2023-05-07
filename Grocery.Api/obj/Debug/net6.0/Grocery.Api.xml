@@ -1,0 +1,242 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Grocery.Api</name>
+    </assembly>
+    <members>
+        <member name="T:GroceryApi.Base.BaseEntity">
+            <summary>
+            Classe que define o padrão de todas as entidades
+            </summary>
+        </member>
+        <member name="M:GroceryApi.Base.BaseEntity.Updated">
+            <summary>
+            Método que inclui a data atual em que a propriedade foi atualizada
+            </summary>
+        </member>
+        <member name="M:GroceryApi.Base.BaseEntity.Delete">
+            <summary>
+            Método que inclui a data atual em que a propriedade foi deletada
+            </summary>
+        </member>
+        <member name="M:GroceryApi.Entities.UserEntity.ChangePassword(System.String)">
+            <summary>
+            Método para alterar a senha do usuário
+            </summary>
+            <param name="newPassword">Nova senha</param>
+            <exception cref="T:System.Exception">Caso tenha uma falha na biblioteca de hashing</exception>
+        </member>
+        <member name="M:GroceryApi.Entities.UserEntity.ValidatePassword(System.String)">
+            <summary>
+            Método para validar a senha do usuário
+            </summary>
+            <param name="providedPassword">Senha provida pelo usuário</param>
+            <returns>True caso a senha esteja igual e False caso esteja diferente</returns>
+        </member>
+        <member name="M:GroceryApi.Entities.UserEntity.New(System.String,System.String,System.String,Grocery.Api.Enums.UserRoles)">
+            <summary>
+            Método para criar novo usuário
+            </summary>
+            <param name="name">Nome do usuário</param>
+            <param name="userName"> username do usuário</param>
+            <param name="password"> Senha do usuário</param>
+            <returns>Novo usuário</returns>
+        </member>
+        <member name="M:GroceryApi.Entities.UserEntity.Edit(System.String,System.String,System.String)">
+            <summary>
+            Método que faz o update
+            </summary>
+            <param name="name"></param>
+            <param name="userName"></param>
+            <param name="password"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Grocery.Api.Controllers.AuthController.Register(Grocery.Api.Models.RegisterUserRequest)">
+            <summary>
+            Método que registra novo usuário 
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:Grocery.Api.Controllers.AuthController.Login(Grocery.Api.Models.LoginRequest)">
+            <summary>
+            Método para logar
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Grocery.Api.Controllers.AuthController.GenerateToken(GroceryApi.Entities.UserEntity)">
+            <summary>
+            Gera o token do usuario
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Grocery.Api.Controllers.ProductController.DeleteProduct(System.Int32)">
+            <summary>
+            Método que deleta o usuário
+            </summary>
+            <param name="productId"></param>
+            <returns></returns>
+            <exception cref="T:Opw.HttpExceptions.NotFoundException"></exception>
+        </member>
+        <member name="M:Grocery.Api.Controllers.ProductController.Edit(System.Nullable{System.Int32},Grocery.Api.Models.RegisterProductRequest)">
+            <summary>
+            Método que edita um produto
+            </summary>
+            <param name="productId"></param>
+            <param name="request"></param>
+            <returns></returns>
+            <exception cref="T:Opw.HttpExceptions.NotFoundException"></exception>
+        </member>
+        <member name="M:Grocery.Api.Controllers.ProductController.Get">
+            <summary>
+            Método que obtem todos os produtos cadastrados
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Grocery.Api.Controllers.ProductController.GetId(System.Int32)">
+            <summary>
+            Método que obtem um produto pelo ID
+            </summary>
+            <param name="productId"></param>
+            <returns></returns>
+            <exception cref="T:Opw.HttpExceptions.NotFoundException"></exception>
+        </member>
+        <member name="M:Grocery.Api.Controllers.ProductController.RegisterProduct(Grocery.Api.Models.RegisterProductRequest)">
+             <summary>
+             Método que adidiona o produto na base de dados
+             </summary>
+             <param name="request"></param>
+             <returns>  </returns>
+            
+        </member>
+        <member name="M:Grocery.Api.Controllers.StockController.Delete(System.Int32)">
+            <summary>
+            Método que deleta o produto do estoque
+            </summary>
+            <param name="productStockId"></param>
+            <returns></returns>
+            <exception cref="T:Opw.HttpExceptions.NotFoundException"></exception>
+        </member>
+        <member name="M:Grocery.Api.Controllers.StockController.Edit(System.Int32,Grocery.Api.Models.RegisterProductStockRequest)">
+            <summary>
+            Método que edita o produto do estoque
+            </summary>
+            <param name="productStockId"></param>
+            <param name="request"></param>
+            <returns></returns>
+            <exception cref="T:Opw.HttpExceptions.NotFoundException"></exception>
+        </member>
+        <member name="M:Grocery.Api.Controllers.StockController.RegisterStock(Grocery.Api.Models.RegisterProductStockRequest)">
+             <summary>
+            Método que adiciona produto no estoque
+             </summary>
+             <param name="request"></param>
+             <returns></returns>
+        </member>
+        <member name="M:Grocery.Api.Controllers.StockController.Get">
+            <summary>
+            Método que obtem todos os produtos cadastrados
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Grocery.Api.Controllers.StockController.GetId(System.Int32)">
+            <summary>
+            Método que obtem um produto do stock pelo ID
+            </summary>
+            <param name="productId"></param>
+            <returns></returns>
+            <exception cref="T:Opw.HttpExceptions.NotFoundException"></exception>
+        </member>
+        <member name="M:Grocery.Api.Controllers.UserController.Edit(System.Int32,Grocery.Api.Models.RegisterUserRequest)">
+            <summary>
+            Método que edita o usuario
+            </summary>
+            <param name="id"></param>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Grocery.Api.Controllers.UserController.Delete(System.Int32)">
+            <summary>
+            Método que deleta o usuario
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:Grocery.Api.Controllers.UserController.Get">
+            <summary>
+            Método que obtem todos os usuarios cadastrados
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Grocery.Api.Controllers.UserController.GetId(System.Int32)">
+            <summary>
+            Método que obtem um usuario pelo ID
+            </summary>
+            <param name="userId"></param>
+            <returns></returns>
+            <exception cref="T:Opw.HttpExceptions.NotFoundException"></exception>
+        </member>
+        <member name="M:Grocery.Api.Entities.ProductEntity.New(System.String,System.String,System.String,Grocery.Api.Enums.ProductCategory)">
+            <summary>
+            Método para cadastrar novo produto
+            </summary>
+            <param name="name">nome do produto</param>
+            <param name="brand">marca do produto</param>
+            <param name="price">preço do produto</param>
+            <param name="category">categoria do produto</param>
+            <returns></returns>
+        </member>
+        <member name="T:Grocery.Api.Migrations.CriacaoInicial">
+            <inheritdoc />
+        </member>
+        <member name="M:Grocery.Api.Migrations.CriacaoInicial.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Grocery.Api.Migrations.CriacaoInicial.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Grocery.Api.Migrations.CriacaoInicial.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Grocery.Api.Migrations.CriacaodapropriedadeRoles">
+            <inheritdoc />
+        </member>
+        <member name="M:Grocery.Api.Migrations.CriacaodapropriedadeRoles.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Grocery.Api.Migrations.CriacaodapropriedadeRoles.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Grocery.Api.Migrations.CriacaodapropriedadeRoles.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Grocery.Api.Migrations.Criacaotabela_Products">
+            <inheritdoc />
+        </member>
+        <member name="M:Grocery.Api.Migrations.Criacaotabela_Products.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Grocery.Api.Migrations.Criacaotabela_Products.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Grocery.Api.Migrations.Criacaotabela_Products.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Grocery.Api.Migrations.Criacaotabela_Stock">
+            <inheritdoc />
+        </member>
+        <member name="M:Grocery.Api.Migrations.Criacaotabela_Stock.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Grocery.Api.Migrations.Criacaotabela_Stock.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Grocery.Api.Migrations.Criacaotabela_Stock.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>
